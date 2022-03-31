@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #b0d1da;
+  padding: 0 10px;
+}
+
+.wrapper{
+  background: #fff;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+              0 32px 64px -48px rgba(0,0,0,0.5);
+}
+
+/* Login & Signup CSS Start */
+.form{
+  padding: 25px 30px;
+}
+
+.form header{
+  color: #45b7d6;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #45b7d6;
+}
+
+.form form .error-text{
+  color: #ca2737;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  background: #f5d8db;
+  border: 1px solid #f5d8db;
+  margin-top: 10px;
+  display: none;
+}
+.form form .field{
+  display: flex;
+  margin: 5px 0;
+  flex-direction: column;
+  position: relative;
+}
+.form form .field label{
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+.form form .input input{
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 186, 186);
+}
+.form form .field input{
+  outline: none;
+}
+.form form .image input{
+  font-size: 18px;
+}
+
+.form form .button input{
+  height: 45px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  background: #45b7d6;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.form form .button input:hover{
+  background: #32849b;
+}
+.form form .field i{
+  position: absolute;
+  right: 15px;
+  top: 75%;
+  color: #ccc;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.form form .field i.active::before{
+  color: #333;
+  content: "\f070";
+}
+.form .link{
+  text-align: center;
+  margin: 10px 0;
+  font-size: 18px;
+}
+.form .link a{
+  color: #0004fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+.form .link a:hover{
+  color: #ff162d;
+}
+
+
+/* Users List CSS Start */
+.users{
+  padding: 25px 30px;
+  min-height: 500px;
+}
+.users header,
+.users-list a{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #45b7d6;
+  justify-content: space-between;
+}
+.wrapper img{
+  object-fit: cover;
+  border-radius: 50%;
+}
+.users header img{
+  height: 60px;
+  width: 60px;
+}
+:is(.users, .users-list) .content{
+  display: flex;
+  align-items: center;
+}
+:is(.users, .users-list) .content .details{
+  color: #000;
+  margin-left: 20px;
+}
+:is(.users, .users-list) .details span{
+  font-size: 18px;
+  font-weight: 500;
+}
+.users header .logout{
+  display: block;
+  background: #45b7d6;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.users header .logout:hover{
+  background: #32849b;
+}
+.details-title{
+  margin: auto 10px;
+}
+.details-title span{
+  font-size: 20px;
+  font-weight: 500;
+}
+.details-title p{
+  font-size: 16px;
+  font-weight: 400;
+  color: #2489a5;
+}
+.users .search{
+  margin: 20px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.users .search .text{
+  font-size: 18px;
+}
+.users .search input{
+  position: absolute;
+  height: 42px;
+  width: calc(100% - 50px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #c7c5c5;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.users .search input.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+.users .search button{
+  position: relative;
+  z-index: 1;
+  width: 47px;
+  height: 42px;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  color: #45b7d6;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.2s ease;
+}
+.users .search button.active{
+  background: #45b7d6;
+  color: #fff;
+}
+.search button.active i::before{
+  content: '\f00d';
+}
+.users-list{
+  max-height: 350px;
+  overflow-y: auto;
+}
+:is(.users-list, .chat-box)::-webkit-scrollbar{
+  width: 0px;
+}
+.users-list a{
+  margin: 10px 0;
+  padding: 10px 15px;
+  display: flex;
+  border: 1px solid #80a2ac;
+  border-radius: 15px;
+}
+.users-list a:hover{
+  background: #37b0d1;
+}
+.users-list a img{
+  height: 40px;
+  width: 40px;
+}
+.users-list a .details span{
+  color: #19191f;
+  font-size: 18px;
+}
+.users-list a .details p{
+  color: #606069;
+  font-size: 16px;
+}
+.users-list a .status-dot{
+  font-size: 15px;
+  color: rgb(30, 184, 30);
+  padding-left: 10px;
+}
+.users-list a .status-dot-offline{
+  font-size: 15px;
+  color: rgb(235, 29, 29);
+}
+
+/* Chat Area CSS Start */
+.chat-area header{
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+}
+.chat-area header .back-icon{
+  color: #45b7d6;
+  font-size: 18px;
+}
+.chat-area header img{
+  height: 45px;
+  width: 45px;
+  margin: 0 15px;
+}
+.chat-area header .details span{
+  font-size: 20px;
+  font-weight: 500;
+}
+.chat-area header .details p{
+  font-size: 16px;
+  font-weight: 400;
+  color: #2489a5;
+}
+.chat-box{
+  position: relative;
+  height: 400px;
+  overflow-y: auto;
+  padding: 10px 30px 20px 30px;
+  background: #f7f7f7;
+  box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+              inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+.chat-box .text{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: calc(100% - 50px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.chat-box .chat{
+  margin: 15px 0;
+}
+.chat-box .chat p{
+  word-wrap: break-word;
+  padding: 8px 16px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+              0rem 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.chat-box .outgoing{
+  display: flex;
+}
+.chat-box .outgoing .details{
+  margin-left: auto;
+  max-width: calc(100% - 130px);
+}
+.outgoing .details p{
+  font-size: 18px;
+  font-weight: 400;
+  background: #227b94;
+  color: #fff;
+  border-radius: 18px 18px 0 18px;
+}
+.incoming-time-chat p{
+  text-align: left;
+}
+.outgoing-time-chat p{
+  text-align: right;
+}
+.chat-box .incoming{
+  display: flex;
+  align-items: flex-end;
+}
+.chat-box .incoming img{
+  height: 35px;
+  width: 35px;
+}
+.chat-box .incoming .details{
+  margin-right: auto;
+  margin-left: 10px;
+  max-width: calc(100% - 130px);
+}
+.incoming .details p{
+  font-size: 18px;
+  font-weight: 400;
+  background: #60bbd4;
+  color: #ffffff;
+  border-radius: 18px 18px 18px 0;
+}
+.typing-area{
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.typing-area input{
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 18px;
+  padding: 0 13px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+}
+.typing-area button{
+  color: #fff;
+  width: 55px;
+  border: none;
+  outline: none;
+  background: #36a4c2;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.3s ease;
+}
+.typing-area button.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responive media query */
+@media screen and (max-width: 450px) {
+  .form, .users{
+    padding: 20px;
+  }
+  .users header img{
+    height: 45px;
+    width: 45px;
+  }
+  .users header .logout{
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+  :is(.users, .users-list) .content .details{
+    margin-left: 15px;
+  }
+  .users-list a{
+    padding-right: 10px;
+  }
+  .chat-area header{
+    padding: 15px 20px;
+  }
+  .chat-box{
+    min-height: 400px;
+    padding: 10px 15px 15px 20px;
+  }
+  .chat-box .chat p{
+    font-size: 15px;
+  }
+  .chat-box .outogoing .details{
+    max-width: 230px;
+  }
+  .chat-box .incoming .details{
+    max-width: 265px;
+  }
+  .incoming .details img{
+    height: 30px;
+    width: 30px;
+  }
+  .chat-area form{
+    padding: 20px;
+  }
+  .chat-area form input{
+    height: 40px;
+    width: calc(100% - 48px);
+  }
+  .chat-area form button{
+    width: 45px;
+  }
+}
